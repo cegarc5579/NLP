@@ -1,3 +1,4 @@
+from typing import Text
 from textblob import TextBlob
 
 text = "Today is a beautiful day. Tomorrow looks like bad weather."
@@ -12,7 +13,7 @@ sentences = blob.sentences#this breaks up the sentences and seperates them
 #breaks it up into two
 
 words = blob.words #split it into words
-
+'''
 #print(words)
 
 #print(blob.tags) #this tells you what the word is like noun/adjectives/verbs and stuff like that 
@@ -55,3 +56,35 @@ print(chinese)
 french = blob.translate(to='fr')
 print(french)
 
+'''
+
+#change singular words to plural, plural words to singular 
+#different methods to change these
+
+from textblob import Word
+
+index = Word('index') #changing this to plural
+cacti = Word('cacti') #changing this to singular
+
+print(index.pluralize())
+print(cacti.singularize())
+
+#word list
+animals = TextBlob('dog cat fish bird').words #pluralizing the list of words that we provided 
+print(animals.pluralize())
+
+#spellcheck and corrections
+word = Word('theyr')
+
+print(word.spellcheck())#spellcheck method returns words and their confidence level about what we are trying to say
+
+print(word.correct())#correct goes with the word with the highest confidence that is displayed by the function above
+
+word1 = Word('studes')
+word2 = Word('varieties')
+
+print(word1.stem()) #these functions take off the end of the word
+print(word2.stem())
+
+#print(word1.lemmatize())
+#print(word2.lemmatize())
