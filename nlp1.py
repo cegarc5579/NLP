@@ -88,3 +88,10 @@ print(word2.stem())
 
 #print(word1.lemmatize())
 #print(word2.lemmatize())
+
+#definitions, synonyms and antonyms function
+
+happy = Word("happy")
+
+#print(happy.definitions)#provides definition of the word
+#print(happy.synsets)#this provides a synonym #this a newer version so these aren't working
